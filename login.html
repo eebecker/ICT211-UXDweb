@@ -2,46 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UniConnect - Login</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UniConnect - Login</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+.forgot-password {
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  color: #b45309; /* dark amber for strong contrast */
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  user-select: none;
+}
+
+.forgot-password:hover,
+.forgot-password:focus {
+  color: #92400e; /* darker amber/orange */
+  background-color: #fef3c7; /* light amber background for emphasis */
+  outline: none;
+  text-decoration: none;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+  </style>
 </head>
 
 <body>
-    <div class="wrapper">
-        <header class="logo-header" role="banner">
-            <img src="uniconnect_logo.png" alt="UniConnect student portal logo" />
-        </header>
+  <div class="wrapper">
+    <header class="logo-header" role="banner">
+      <img src="uniconnect_logo.png" alt="UniConnect student portal logo" />
+    </header>
 
-        <main class="container" role="main">
-            <h1>Student Login</h1>
+    <main class="container" role="main">
+      <h1>Student Login</h1>
 
-            <form action="#" method="post" aria-label="Student login form" novalidate>
+      <form action="#" method="post" aria-label="Student login form" novalidate>
 
-                <label for="studentIdLogin">Student ID</label>
-                <input type="text" id="studentIdLogin" name="studentId" required pattern="\d{6,10}" />
+        <label for="studentIdLogin">Student ID</label>
+        <input type="text" id="studentIdLogin" name="studentId" required pattern="\d{6,10}" />
 
-                <label for="passwordLogin">Password</label>
-                <input type="password" id="passwordLogin" name="password" required />
+        <label for="passwordLogin">Password</label>
+        <input type="password" id="passwordLogin" name="password" required />
 
-                <button type="submit">Log In</button>
+       
 
-                <button class="signup-btn" type="button">Sign In</button>
-            </form>
-        </main>
-    </div>
-    <script>
-        const form = document.querySelector('form');
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            window.location.href = 'index.html';
-        });
+        <button type="submit">Log In</button>
 
-        document.querySelector('.signup-btn').addEventListener('click', () => {
-            window.location.href = 'registration.html';
-        });
-    </script>
+        <button class="signup-btn" type="button">Sign In</button>
+
+         <button class="forgot-password" type="button" aria-label="Forgot Password">Forgot Password?</button>
+      </form>
+    </main>
+  </div>
+  <script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      window.location.href = 'index.html';
+    });
+
+    document.querySelector('.signup-btn').addEventListener('click', () => {
+      window.location.href = 'registration.html';
+    });
+
+    document.querySelector('.forgot-password').addEventListener('click', () => {
+      alert('Password reset functionality to be implemented.');
+      // Or redirect to password reset page:
+      // window.location.href = 'forgot-password.html';
+    });
+  </script>
 </body>
 
 </html>
