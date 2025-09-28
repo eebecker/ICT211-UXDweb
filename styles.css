@@ -388,7 +388,7 @@ h1::after {
 }
 
 #logout-btn {
-  background-color: #ef4444;
+  background-color: #A90F0F;
   color: white;
   border: none;
   border-radius: 8px;
@@ -624,4 +624,5 @@ h1::after {
     display: block;
   }
 }
+
 
