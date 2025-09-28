@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UniConnect - Student Registration</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="logo-header" role="banner">
+            <img src="uniconnect_logo.png" alt="UniConnect student portal logo" />
+        </header>
+
+        <div class="container" role="main">
+            <h1>Student Registration</h1>
+
+            <form action="login.html" method="post" aria-label="New student registration form" novalidate>
+
+                <label for="studentId">Student ID</label>
+                <input type="text" id="studentId" name="studentId" required pattern="\d{6,10}"
+                    aria-describedby="studentIdHelp" />
+                <small id="studentIdHelp">Numbers only, between 6 and 10 digits.</small>
+
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required />
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 555-5555" pattern="^\+?[\d\s\-]{7,15}$"
+                    required />
+
+                <label for="emergency-phone">Emergency Phone</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 555-5555" pattern="^\+?[\d\s\-]{7,15}$"
+                    required />
+
+                <label for="course">Course</label>
+                <select id="course" name="course" required>
+                    <option value="">Select a course</option>
+                    <option value="bsi">Bachelor of Information Systems</option>
+                    <option value="adm">Administration</option>
+                    <option value="eng">Engineering</option>
+                    <option value="design">Design</option>
+                </select>
+
+                <label for="password">Password (min 8 characters, must include number and symbol)</label>
+                <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[^\w\s]).{8,}"
+                    aria-describedby="passwordHelp" />
+                <small id="passwordHelp">Example: Uni@1234</small>
+
+                <label for="securityQuestion">Security Question</label>
+                <select id="securityQuestion" name="securityQuestion" required>
+                    <option value="">Select a question</option>
+                    <option value="petName">What is your pet's name?</option>
+                    <option value="birthCity">What city were you born in?</option>
+                    <option value="motherMaiden">What is your mother's maiden name?</option>
+                </select>
+
+                <label for="securityAnswer">Answer to Security Question</label>
+                <input type="text" id="securityAnswer" name="securityAnswer" required />
+
+                <div class="joining-fee-box" aria-labelledby="joiningFeeTitle">
+                    <legend id="joiningFeeTitle" style="font-weight:bold;margin-bottom:4px;">Joining Fee Payment
+                    </legend>
+
+                    <label for="cardNumber">Credit Card Number</label>
+                    <input type="text" id="cardNumber" name="cardNumber" required pattern="\d{13,19}"
+                        aria-describedby="cardNumberHelp" />
+                    <small id="cardNumberHelp">Numbers only, between 13 and 19 digits.</small>
+
+                    <label for="expiryDate">Expiry Date</label>
+                    <input type="month" id="expiryDate" name="expiryDate" required />
+
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" required pattern="\d{3,4}" />
+                </div>
+
+
+                <label>
+                    <input type="checkbox" name="consent" required />
+                    I agree to the university's data usage and privacy policies.
+                </label>
+
+                <label>
+                    <input type="checkbox" name="emailNotify" />
+                    I want to receive email notifications about events, deadlines, and new courses.
+                </label>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    <script src="form-scripts.js" defer></script>
+</body>
+
+</html>

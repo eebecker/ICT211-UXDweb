@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UniConnect - Courses</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .search-bar {
+            margin-bottom: 24px;
+        }
+
+        .search-bar label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .search-bar input[type="search"] {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1.1rem;
+            border: 1.8px solid #cbd5e1;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+            color: #334155;
+        }
+
+        .search-bar input[type="search"]:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f3f4f6;
+            font-weight: 700;
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="logo-header" role="banner">
+            <img src="uniconnect_logo.png" alt="UniConnect student portal logo" />
+        </header>
+
+        <div class="top-right-controls">
+            <label for="language-select" class="screen-reader-only">Select Language</label>
+            <select id="language-select" name="language-select" aria-label="Select language">
+                <option value="en" selected>English</option>
+                <option value="pt">Português</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+
+            <button id="logout-btn" type="button" aria-label="Logout" title="Logout">Logout</button>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="courses.html" class="active">Courses</a>
+            <a href="grades.html">Grades</a>
+            <a href="announcements.html">Announcements</a>
+        </nav>
+
+
+        <main class="container" role="main">
+            <h1>Courses</h1>
+
+            <section class="search-bar" aria-label="Search Courses">
+                <label for="course-search">Search Courses</label>
+                <input type="search" id="course-search" name="course-search" placeholder="Enter course name or code"
+                    aria-describedby="courseSearchHelp" />
+                <small id="courseSearchHelp">Type keywords and press enter to search.</small>
+            </section>
+
+            <table aria-describedby="courseTableDesc">
+                <option id="courseTableDesc" classass="screen-reader-only">List of available courses</caption>
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Instructor</th>
+                            <th>Schedule</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BSI101</td>
+                            <td>Introduction to Information Systems</td>
+                            <td>Dr. Smith</td>
+                            <td>Mon & Wed 9:00-10:30</td>
+                        </tr>
+                        <tr>
+                            <td>ADM202</td>
+                            <td>Principles of Management</td>
+                            <td>Prof. Johnson</td>
+                            <td>Tue & Thu 11:00-12:30</td>
+                        </tr>
+                        <tr>
+                            <td>ENG303</td>
+                            <td>Advanced Engineering Concepts</td>
+                            <td>Eng. Lee</td>
+                            <td>Mon, Wed & Fri 14:00-15:30</td>
+                        </tr>
+                        <tr>
+                            <td>DES104</td>
+                            <td>Graphic Design Basics</td>
+                            <td>Ms. Allen</td>
+                            <td>Tue & Thu 9:30-11:00</td>
+                        </tr>
+                    </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="search-filter.js" defer></script>
+        <script>
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+
+</html>

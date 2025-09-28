@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UniConnect - Announcements</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .search-bar {
+            margin-bottom: 24px;
+        }
+
+        .search-bar label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .search-bar input[type="search"] {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1.1rem;
+            border: 1.8px solid #cbd5e1;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+            color: #334155;
+        }
+
+        .search-bar input[type="search"]:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+        }
+
+        article {
+            background-color: #f9fafb;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        article h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: #0f172a;
+        }
+
+        article time {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        article p {
+            margin-bottom: 0;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="logo-header" role="banner">
+            <img src="uniconnect_logo.png" alt="UniConnect student portal logo" />
+        </header>
+        <div class="top-right-controls">
+            <label for="language-select" class="screen-reader-only">Select Language</label>
+            <select id="language-select" name="language-select" aria-label="Select language">
+                <option value="en" selected>English</option>
+                <option value="pt">Português</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+
+            <button id="logout-btn" type="button" aria-label="Logout" title="Logout">Logout</button>
+        </div>
+
+        <nav class="navbar" role="navigation" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="grades.html">Grades</a>
+            <a href="announcements.html" class="active">Announcements</a>
+        </nav>
+
+
+        <main class="container" role="main">
+            <h1>Announcements</h1>
+
+            <section class="search-bar" aria-label="Search Announcements">
+                <label for="announcement-search">Search Announcements</label>
+                <input type="search" id="announcement-search" name="announcement-search" placeholder="Enter keywords"
+                    aria-describedby="announcementSearchHelp" />
+                <small id="announcementSearchHelp">Type keywords and press enter to search.</small>
+            </section>
+
+            <article>
+                <h2>Campus Closed on Friday</h2>
+                <time datetime="2025-10-03">October 3, 2025</time>
+                <p>Due to maintenance work the campus will be closed this Friday. Please plan accordingly.</p>
+            </article>
+
+            <article>
+                <h2>New Course: Advanced UX Design</h2>
+                <time datetime="2025-09-25">September 25, 2025</time>
+                <p>Enroll now for the upcoming course on Advanced UX Design starting November 2025.</p>
+            </article>
+
+            <article>
+                <h2>Library Extended Hours</h2>
+                <time datetime="2025-09-20">September 20, 2025</time>
+                <p>The university library will be open longer on weekdays till 10pm.</p>
+            </article>
+        </main>
+        <script src="search-filter.js" defer></script>
+        <script>
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                window.location.href = 'login.html';
+            });
+        </script>
+    </div>
+</body>
+
+</html>

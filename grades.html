@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UniConnect - Grades</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .search-bar {
+            margin-bottom: 24px;
+        }
+
+        .search-bar label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+
+        .search-bar input[type="search"] {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1.1rem;
+            border: 1.8px solid #cbd5e1;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+            color: #334155;
+        }
+
+        .search-bar input[type="search"]:focus {
+            outline: none;
+            border-color: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 12px 8px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f3f4f6;
+            font-weight: 700;
+            color: #0f172a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="logo-header" role="banner">
+            <img src="uniconnect_logo.png" alt="UniConnect student portal logo" />
+        </header>
+
+        <div class="top-right-controls">
+            <label for="language-select" class="screen-reader-only">Select Language</label>
+            <select id="language-select" name="language-select" aria-label="Select language">
+                <option value="en" selected>English</option>
+                <option value="pt">Português</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+            </select>
+
+            <button id="logout-btn" type="button" aria-label="Logout" title="Logout">Logout</button>
+        </div>
+        <nav class="navbar" role="navigation" aria-label="Primary navigation">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="grades.html" class="active">Grades</a>
+            <a href="announcements.html">Announcements</a>
+        </nav>
+
+
+        <main class="container" role="main">
+            <h1>Grades</h1>
+
+            <section class="search-bar" aria-label="Search Grades">
+                <label for="grades-search">Search Grades</label>
+                <input type="search" id="grades-search" name="grades-search" placeholder="Enter course or grade"
+                    aria-describedby="gradesSearchHelp" />
+                <small id="gradesSearchHelp">Type keywords and press enter to search.</small>
+            </section>
+
+            <table aria-describedby="gradesTableDesc">
+                <caption id="gradesTableDesc" class="screen-reader-only">Your course grades</caption>
+                <thead>
+                    <tr>
+                        <th>Course</th>
+                        <th>Grade</th>
+                        <th>Semester</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DES104: Graphic Design Basics</td>
+                        <td>A</td>
+                        <td>2025 Spring</td>
+                    </tr>
+                    <tr>
+                        <td>HIS111: World History Overview</td>
+                        <td>B+</td>
+                        <td>2025 Spring</td>
+                    </tr>
+                    <tr>
+                        <td>MAT201: Calculus II</td>
+                        <td>A-</td>
+                        <td>2025 Summer</td>
+                    </tr>
+                    <tr>
+                        <td>PSY101: Introduction to Psychology</td>
+                        <td>B</td>
+                        <td>2025 Summer</td>
+                    </tr>
+                    <tr>
+                        <td>ENG201: English Literature</td>
+                        <td>A</td>
+                        <td>2025 Spring</td>
+                    </tr>
+                    <tr>
+                        <td>CHEM105: General Chemistry</td>
+                        <td>A-</td>
+                        <td>2025 Summer</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="search-filter.js" defer></script>
+    <script>
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+
+</html>
