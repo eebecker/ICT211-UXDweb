@@ -382,7 +382,7 @@ h1::after {
     align-items: flex-end;
   }
   .logo-header img {
-    width: 45px;
+    width: 90px;
     height: auto;
   }
 }
@@ -624,6 +624,7 @@ h1::after {
     display: block;
   }
 }
+
 
 
 
